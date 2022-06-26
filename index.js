@@ -40,14 +40,14 @@ AFRAME.registerComponent('avatar', {
     // Use Mutation Observers to catch tracked-controls-webxr being set
     this.leftHandControls;
     const leftWatcher = new MutationObserver(() => {
-      this.leftHandControls = this.leftHand.components['tracked-controls-webxr'];
+      this.leftHandControls = this.leftHand.components['tracked-controls'];
       leftWatcher.disconnect();
     });
     leftWatcher.observe(this.leftHand, { attributes: true });
 
     this.rightHandControls;
     const rightWatcher = new MutationObserver(() => {
-      this.rightHandControls = this.leftHand.components['tracked-controls-webxr'];
+      this.rightHandControls = this.leftHand.components['tracked-controls'];
       rightWatcher.disconnect();
     });
     rightWatcher.observe(this.rightHand, { attributes: true });
